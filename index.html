@@ -1,19 +1,55 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>MMIP</title>    
-    <link rel="stylesheet" href="assets/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MMIP App to raise awareness and provide resources for Missing and Murdered Indigenous People">
+  <title>MMIP Awareness App</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>MMIP Awareness App</h1>
+      <ul>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <img src="assets/images/MMIP-hand-print.jpg" alt="MMIP Logo" class="header-image">
+  </header>
 
-  <body>
-    
-  </body>
+  <main>
+    <section id="map">
+      <h2>Interactive Map</h2>
+      <div id="map-container" style="height: 400px;"></div>
+    </section>
+    <section id="about">
+      <h2>About the App</h2>
+      <p>This app aims to raise awareness about Missing and Murdered Indigenous People by providing an interactive platform to view case information and find resources.</p>
+    </section>
+    <section id="resources">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="#">Resource 1</a></li>
+        <li><a href="#">Resource 2</a></li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-
+    <p>&copy; 2024 MMIP Awareness App</p>
   </footer>
 
-  </html>
+  <script>
+    const map = L.map('map-container').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  </script>
+</body>
+</html>
